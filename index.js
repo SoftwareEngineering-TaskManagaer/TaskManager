@@ -3,7 +3,7 @@ const navLinks = document.querySelectorAll('nav li a'); // Selects all links ins
 
 navLinks.forEach(link => {
     if (link.href.includes(`${activePage}`)) { // Checks if the link's href includes the current path
-        link.classList.add('active'); // Adds 'active' class to the matching link
+        link.classList.add('active1'); // Adds 'active' class to the matching link
     } 
 });
 
