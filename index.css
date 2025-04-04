@@ -1,0 +1,156 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light background for better readability */
+    color: #333;
+}
+
+main {
+    margin-left: 280px; /* Space for the sticky TOC */
+    margin-right:60px;
+    padding: 20px;
+    line-height: 1.6; /* Improve text readability */
+    font-size: 16px;
+}
+
+main h1,h2{
+    margin-top:40px;
+}
+main p, main ul {
+    margin-top:30px;
+    font-size: 18px; /* Bigger font size for paragraphs */
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify; /* Align text for a neat look */
+}
+
+hr {
+    border: 0;
+    border-top: 3px solid brown; /* Brown color for hr */
+    margin: 30px 0;
+    width: 80%; /* Add padding for better alignment */
+    border-radius: 5px; /* Smooth edges for better aesthetics */
+}
+
+#table-of-contents {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 15px;
+    width: 250px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px; /* Slightly rounded edges */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for better visibility */
+}
+
+#table-of-contents h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+#toc-list li {
+    margin: 5px 0;
+}
+
+#toc-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    border-radius: 5px; /* Rounded corners */
+}
+
+#toc-list li a:hover {
+    background-color: grey; /* Hover effect for links */
+}
+
+#toc-list li a.active {
+    background-color: #555; /* Highlight only the active section */
+    font-weight: bold;
+}
+
+ul.subheadings {
+    display: none; /* Initially hidden */
+    margin-left: 20px; /* Indentation for subheadings */
+    margin-top: 5px;
+}
+
+.subheadings li {
+    margin-top: 5px; /* Add spacing between subheading items */
+}
+.navclass{
+    display:flex;
+    background-color:rgb(63, 72, 72); 
+    justify-content: space-between;
+    text-align:center;
+    padding-top:20px;
+    padding-bottom:10px;
+    width:100%;
+}
+.logo a{
+    margin-left:40px;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom:10px;
+    color:whitesmoke;
+}
+.navclass ul{
+    list-style-type:none; /*To remove the circle,disc, square before the text*/
+    margin:0px;
+    padding:0px;
+}
+.navclass li a{
+    font-size:16px;
+    font-weight: bold;
+    color:whitesmoke;
+    text-decoration:none; /*To remove underline*/
+    text-align:center;
+    padding:20px;
+}
+.navclass a:hover{
+    background-color:rgb(37, 42, 42);
+}
+.navclass li{
+    display:inline-block;
+}
+
+.navclass li a.active{
+    background-color: black;
+}
+hr{
+    width: 100%; /* Make the last hr expand across the web page */
+    margin-bottom:30px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#toc-list a.active {
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.subheadings {
+  margin-left: 1em;
+  font-size: 1em;
+}
