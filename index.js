@@ -1,10 +1,11 @@
-const activePage = window.location.pathname; // Gets the current page path
-const navLinks = document.querySelectorAll('nav li a'); // Selects all links inside 'nav li'
+const activePage = window.location.pathname.split('/').pop(); // Gets the page name
+const navLinks = document.querySelectorAll('nav li a');
 
 navLinks.forEach(link => {
-    if (link.href.includes(`${activePage}`)) { // Checks if the link's href includes the current path
-        link.classList.add('active1'); // Adds 'active' class to the matching link
-    } 
+    const linkPath = link.pathname.split('/').pop(); // Gets the link's page name
+    if (linkPath === activePage) {
+        link.classList.add('active');
+    }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
