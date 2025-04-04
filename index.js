@@ -113,11 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         const visible = entries.filter(entry => entry.isIntersecting)
             .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
+    
         if (visible.length > 0) {
             const entry = visible[0];
             const heading = entry.target;
-
+    
             if (heading.tagName === "H2") {
                 const parentH1 = getParentH1(heading);
                 currentMain = parentH1 || currentMain;
@@ -129,8 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const headingName = currentMain.textContent.trim().toLowerCase();
                 const pastHr = hrPositions.find(pos => currentMain.offsetTop < pos);
                 const nextH2 = getNextH2(currentMain);
-
-                // Only skip sub if nothing is visible yet under features
+    
                 const skipExpand = headingName === "features" && pastHr;
                 if (skipExpand) {
                     activateTOC(currentMain.id, null);
@@ -140,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }, {
-        threshold: 0.1
+        threshold: [0.3], // Fire when 10% of the element is in the viewport
+        rootMargin: '0px 0px -80% 0px' // Set a small bottom margin to prevent early activation
     });
 
     headings.forEach(h => observer.observe(h));
