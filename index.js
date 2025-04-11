@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const activePage = window.location.pathname;
+    const activePage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('nav li a');
 
     navLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
+        const linkPath = new URL(link.href).pathname.split('/').pop();;
         if (linkPath === activePage) {
             link.classList.add('active');
         }
