@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const tocList = document.getElementById("toc-list");
     const headings = document.querySelectorAll("main h1, main h2");
@@ -139,10 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }, {
-        threshold: [0.3], // Fire when 10% of the element is in the viewport
+        threshold: [0.3], // Fire when 30% of the element is in the viewport
         rootMargin: '0px 0px -80% 0px' // Set a small bottom margin to prevent early activation
     });
-
+    
     headings.forEach(h => observer.observe(h));
 
     tocList.addEventListener("click", (e) => {

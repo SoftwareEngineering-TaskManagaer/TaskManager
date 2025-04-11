@@ -36,7 +36,7 @@ hr {
     border-radius: 5px; /* Smooth edges for better aesthetics */
 }
 
-#table-of-contents {
+#table-of-contents,#link-panel {
     position: sticky;
     top: 0;
     height: 60vh;
@@ -52,23 +52,29 @@ hr {
     overflow-y: auto; 
     background: linear-gradient(to bottom, saddlebrown 5%, black 20%, black 80%, saddlebrown 95%);
 }
-
-#table-of-contents h2 {
+#link-panel {
+    height: 50vh;
+}
+#table-of-contents h2, #link-panel h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: white;
 }
 
-#toc-list {
+#toc-list,#panel-list {
     list-style: none;
     padding: 0;
 }
 
-#toc-list li {
+#toc-list li, #panel-list li {
     margin: 5px 0;
 }
 
-#toc-list li a {
+#panel-list li {
+    font-size:1.1em;
+}
+
+#toc-list li a , #panel-list li a{
     color: white;
     text-decoration: none;
     padding: 5px;
@@ -76,11 +82,11 @@ hr {
     border-radius: 5px; /* Rounded corners */
 }
 
-#toc-list li a:hover {
+#toc-list li a:hover, #panel-list li a:hover {
     background-color: grey; /* Hover effect for links */
 }
 
-#toc-list li a.active {
+#toc-list li a.active, #panel-list li a.active {
     background-color: #555; /* Highlight only the active section */
     font-weight: bold;
 }
@@ -135,8 +141,9 @@ ul.subheadings {
 }
 
 .navclass li a.active{
-    background-color: black;
+    background-color: black !important;
 }
+
 hr{
     width: 100%; /* Make the last hr expand across the web page */
     margin-bottom:30px;
@@ -147,7 +154,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#toc-list a.active {
+#toc-list a.active, #panel-list a.active {
   font-weight: bold;
   color: whitesmoke;
 }
