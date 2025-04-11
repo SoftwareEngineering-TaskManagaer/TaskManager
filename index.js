@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const activePage = window.location.pathname.split('/').pop();
+    const fullPath = window.location.pathname;
+    const activePage = fullPath.substring(fullPath.lastIndexOf('/') + 1) || 'index.html'; // fallback
+
     const navLinks = document.querySelectorAll('nav li a');
 
     navLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname.split('/').pop();;
-        if (linkPath === activePage) {
+        const linkPath = new URL(link.href).pathname;
+        const linkPage = linkPath.substring(linkPath.lastIndexOf('/') + 1);
+        if (linkPage === activePage) {
             link.classList.add('active');
         }
     });
 });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
